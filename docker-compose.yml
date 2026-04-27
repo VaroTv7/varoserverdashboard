@@ -1,0 +1,14 @@
+services:
+  varodashboard:
+    container_name: varodashboard
+    build: .
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      # Mount your own services.yaml (same format as gethomepage/homepage)
+      - ./public/config/services.yaml:/usr/share/nginx/html/config/services.yaml:ro
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 128M

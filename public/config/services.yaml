@@ -1,0 +1,55 @@
+# VaroDashboard — Example services.yaml
+# Compatible with gethomepage/homepage format
+# Edit this file and refresh your browser — no rebuild needed.
+
+- Media:
+    - Jellyfin:
+        icon: sh-jellyfin.svg
+        href: http://your-server:8096
+        description: Movies & TV Shows
+    - Immich:
+        icon: sh-immich.svg
+        href: http://your-server:2283
+        description: Photo Library
+    - Navidrome:
+        icon: sh-navidrome.svg
+        href: http://your-server:4533
+        description: Music Streaming
+
+- Automation:
+    - Sonarr:
+        icon: sh-sonarr.svg
+        href: http://your-server:8989
+        description: TV Series Management
+    - Radarr:
+        icon: sh-radarr.svg
+        href: http://your-server:7878
+        description: Movie Management
+    - Prowlarr:
+        icon: sh-prowlarr.svg
+        href: http://your-server:9696
+        description: Indexer Management
+
+- Smart Home:
+    - Home Assistant:
+        icon: sh-home-assistant.svg
+        href: http://your-server:8123
+        description: Home Automation
+    - Paperless-NGX:
+        icon: sh-paperless-ngx.svg
+        href: http://your-server:8000
+        description: Document Management
+
+- Infrastructure:
+    - Portainer:
+        icon: sh-portainer.svg
+        href: http://your-server:9000
+        description: Docker Management
+    - Uptime Kuma:
+        icon: sh-uptime-kuma.svg
+        href: http://your-server:3001
+        description: Service Monitoring
+    - Nginx Proxy Manager:
+        icon: sh-nginx-proxy-manager.svg
+        href: http://your-server:81
+        description: Reverse Proxy & SSL

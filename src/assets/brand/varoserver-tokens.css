@@ -1,0 +1,182 @@
+/**
+ * varoserver — Design Tokens
+ * Catppuccin Mocha palette + sistema de identidad varoserver v1.0
+ * 
+ * USO: importar en cualquier app del homelab:
+ *   <link rel="stylesheet" href="/brand/varoserver-tokens.css">
+ *   o @import url('/brand/varoserver-tokens.css');
+ */
+
+:root {
+  /* ─── BASE — Catppuccin Mocha ─── */
+  --vs-bg:        #1e1e2e;  /* fondo principal */
+  --vs-mantle:    #181825;  /* fondo secundario, sidebars */
+  --vs-crust:     #11111b;  /* fondo más profundo, topbars */
+  --vs-surface0:  #313244;  /* cards, borders sutiles */
+  --vs-surface1:  #45475a;  /* hover sobre surface0 */
+  --vs-overlay:   #6c7086;  /* labels, hints, metadata */
+  --vs-subtext:   #a6adc8;  /* texto secundario */
+  --vs-text:      #cdd6f4;  /* texto principal */
+
+  /* ─── ACCENT COLORS ─── */
+  --vs-primary:   #cba6f7;  /* mauve  — identidad principal, logo */
+  --vs-accent:    #89b4fa;  /* blue   — Diane, links, focus */
+  --vs-sapphire:  #74c7ec;  /* sapphire — productividad */
+  --vs-teal:      #94e2d5;  /* teal   — uso libre */
+  --vs-ok:        #a6e3a1;  /* green  — estado nominal, uptime */
+  --vs-warn:      #fab387;  /* peach  — alertas, gaming */
+  --vs-error:     #f38ba8;  /* red    — crítico, down */
+  --vs-yellow:    #f9e2af;  /* yellow — gaming, advertencia */
+  --vs-pink:      #f5c2e7;  /* pink   — Varo Apps */
+
+  /* ─── CATEGORÍAS DE SERVICIOS ─── */
+  --vs-cat-infra:     var(--vs-primary);   /* infraestructura */
+  --vs-cat-ai:        var(--vs-accent);    /* IA & automatización */
+  --vs-cat-smarthome: var(--vs-ok);        /* smart home */
+  --vs-cat-prod:      var(--vs-sapphire);  /* productividad */
+  --vs-cat-media:     var(--vs-warn);      /* media */
+  --vs-cat-gaming:    var(--vs-yellow);    /* gaming */
+  --vs-cat-apps:      var(--vs-pink);      /* varo apps */
+
+  /* ─── DIANE SUB-BRAND ─── */
+  --vs-diane-primary: var(--vs-accent);    /* blue */
+  --vs-diane-glow:    rgba(137,180,250,0.25);
+
+  /* ─── TIPOGRAFÍA (Escalable) ─── */
+  --vs-base-scale: 1;
+  --vs-font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --vs-font-size-xs:    calc(8px * var(--vs-base-scale));
+  --vs-font-size-sm:    calc(9px * var(--vs-base-scale));
+  --vs-font-size-base:  calc(11px * var(--vs-base-scale));
+  --vs-font-size-md:    calc(13px * var(--vs-base-scale));
+  --vs-font-size-lg:    calc(16px * var(--vs-base-scale));
+  --vs-font-size-xl:    calc(20px * var(--vs-base-scale));
+  --vs-font-size-2xl:   calc(28px * var(--vs-base-scale));
+  --vs-font-weight-regular: 400;
+  --vs-font-weight-medium:  500;
+  --vs-font-weight-bold:    600;
+  --vs-letter-spacing-label: 0.2em;   /* LABELS EN MAYÚSCULA */
+  --vs-letter-spacing-title: 0.05em;  /* títulos */
+  --vs-letter-spacing-body:  0.02em;  /* cuerpo */
+
+  /* ─── BORDES Y RADIOS ─── */
+  --vs-radius-sm:   4px;
+  --vs-radius-md:   8px;
+  --vs-radius-lg:  10px;
+  --vs-radius-pill: 999px;
+  --vs-border:      1px solid var(--vs-surface0);
+  --vs-border-primary: 1px solid rgba(203,166,247,0.25);
+  --vs-border-accent:  1px solid rgba(137,180,250,0.25);
+
+  /* ─── SOMBRAS ─── */
+  --vs-shadow-sm:   0 1px 4px rgba(0,0,0,0.3);
+  --vs-shadow-md:   0 4px 20px rgba(0,0,0,0.4);
+  --vs-shadow-hover: 0 4px 20px rgba(0,0,0,0.3), 0 0 0 1px rgba(203,166,247,0.2);
+
+  /* ─── GLOW (para status dots, iconos activos) ─── */
+  --vs-glow-ok:      0 0 6px var(--vs-ok);
+  --vs-glow-primary: 0 0 8px rgba(203,166,247,0.5);
+  --vs-glow-accent:  0 0 8px rgba(137,180,250,0.5);
+
+  /* ─── SPACING (Escalable) ─── */
+  --vs-space-1:  calc(4px * var(--vs-base-scale));
+  --vs-space-2:  calc(8px * var(--vs-base-scale));
+  --vs-space-3:  calc(12px * var(--vs-base-scale));
+  --vs-space-4:  calc(16px * var(--vs-base-scale));
+  --vs-space-5:  calc(20px * var(--vs-base-scale));
+  --vs-space-6:  calc(24px * var(--vs-base-scale));
+  --vs-space-8:  calc(32px * var(--vs-base-scale));
+
+  /* ─── TRANSICIONES ─── */
+  --vs-transition-fast:   all 0.12s ease;
+  --vs-transition-normal: all 0.18s ease;
+}
+
+/* ─── UTILITY CLASSES ─── */
+
+/* Status badges */
+.vs-badge {
+  font-family: var(--vs-font-mono);
+  font-size: var(--vs-font-size-xs);
+  letter-spacing: 0.05em;
+  padding: 2px 10px;
+  border-radius: var(--vs-radius-pill);
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.vs-badge--ok      { color: var(--vs-ok);    background: rgba(166,227,161,0.1); border-color: rgba(166,227,161,0.25); }
+.vs-badge--warn    { color: var(--vs-warn);  background: rgba(250,179,135,0.1); border-color: rgba(250,179,135,0.25); }
+.vs-badge--error   { color: var(--vs-error); background: rgba(243,139,168,0.1); border-color: rgba(243,139,168,0.25); }
+.vs-badge--primary { color: var(--vs-primary); background: rgba(203,166,247,0.1); border-color: rgba(203,166,247,0.25); }
+.vs-badge--accent  { color: var(--vs-accent);  background: rgba(137,180,250,0.1); border-color: rgba(137,180,250,0.25); }
+.vs-badge--muted   { color: var(--vs-overlay); background: rgba(108,112,134,0.1); border-color: rgba(108,112,134,0.2); }
+
+/* Status dot */
+.vs-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.vs-dot--ok    { background: var(--vs-ok);    box-shadow: var(--vs-glow-ok); }
+.vs-dot--warn  { background: var(--vs-warn); }
+.vs-dot--error { background: var(--vs-error); }
+.vs-dot--muted { background: var(--vs-overlay); }
+
+/* Card */
+.vs-card {
+  background: var(--vs-mantle);
+  border: var(--vs-border);
+  border-radius: var(--vs-radius-lg);
+  padding: var(--vs-space-4);
+  transition: var(--vs-transition-fast);
+  font-family: var(--vs-font-mono);
+}
+.vs-card:hover {
+  background: var(--vs-surface0);
+  box-shadow: var(--vs-shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* Icon badge */
+.vs-icon-badge {
+  width: 36px; height: 36px;
+  border-radius: var(--vs-radius-md);
+  background: rgba(203,166,247,0.08);
+  border: 1px solid rgba(203,166,247,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: var(--vs-transition-fast);
+}
+
+/* Resource bar */
+.vs-bar { height: 3px; background: var(--vs-surface0); border-radius: 2px; overflow: hidden; }
+.vs-bar__fill { height: 100%; border-radius: 2px; transition: width 1.5s ease; }
+.vs-bar__fill--primary { background: var(--vs-primary); }
+.vs-bar__fill--accent  { background: var(--vs-accent); }
+.vs-bar__fill--ok      { background: var(--vs-ok); }
+
+/* Section header */
+.vs-section-header {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: var(--vs-space-4);
+}
+.vs-section-header__line {
+  flex: 1; height: 1px; background: var(--vs-surface0); margin-left: 8px;
+}
+.vs-section-header__title {
+  font-family: var(--vs-font-mono);
+  font-size: var(--vs-font-size-md);
+  font-weight: var(--vs-font-weight-bold);
+  color: var(--vs-text);
+  letter-spacing: var(--vs-letter-spacing-title);
+}
+
+/* Typography helpers */
+.vs-label  { font-family: var(--vs-font-mono); font-size: var(--vs-font-size-sm); color: var(--vs-overlay); letter-spacing: var(--vs-letter-spacing-label); text-transform: uppercase; }
+.vs-title  { font-family: var(--vs-font-mono); font-size: var(--vs-font-size-xl); font-weight: var(--vs-font-weight-bold); color: var(--vs-text); letter-spacing: var(--vs-letter-spacing-title); }
+.vs-body   { font-family: var(--vs-font-mono); font-size: var(--vs-font-size-base); color: var(--vs-subtext); line-height: 1.6; }
+.vs-code   { font-family: var(--vs-font-mono); font-size: var(--vs-font-size-base); color: var(--vs-ok); }
+
+/* Scrollbar global */
+* { scrollbar-width: thin; scrollbar-color: var(--vs-surface1) transparent; }
+*::-webkit-scrollbar { width: 4px; height: 4px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: var(--vs-surface1); border-radius: 2px; }
